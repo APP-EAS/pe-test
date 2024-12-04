@@ -320,19 +320,37 @@
     <!-- Pricing Section -->
     <div id="pricing" class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4">
+            <!-- Trust Indicators Header -->
+            <div class="text-center mb-8">
+                <div class="flex items-center justify-center space-x-8 text-gray-600">
+                    <div class="flex items-center">
+                        <i class="fas fa-shield-alt text-xl mr-2 text-blue-800"></i>
+                        <span>SSL Secured</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fab fa-stripe text-xl mr-2 text-blue-800"></i>
+                        <span>Powered by Stripe</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-lock text-xl mr-2 text-blue-800"></i>
+                        <span>256-bit Encryption</span>
+                    </div>
+                </div>
+            </div>
+    
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-6">Simple, Transparent Pricing</h2>
                 <p class="text-xl text-gray-600">Choose your perfect media coverage package</p>
             </div>
                 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                <!-- Basic Plan -->
+                <!-- Essential Plan -->
                 <div class="bg-white rounded-xl shadow-lg overflow-hidden h-full flex flex-col relative">
                     <div class="p-8 flex-grow">
                         <div class="h-8 mb-4"><!-- Spacer for alignment --></div>
-                        <h3 class="text-2xl font-bold mb-4">Basic Media Package</h3>
+                        <h3 class="text-2xl font-bold mb-4">Essential Media Coverage</h3>
                         <div class="text-4xl font-bold mb-4">$399</div>
-                        <p class="text-gray-600 mb-8">Basic news coverage with 4 guaranteed premium placements plus wider network exposure</p>
+                        <p class="text-gray-600 mb-8">4 guaranteed premium placements plus wider network exposure</p>
                             
                         <ul class="space-y-4">
                             <li class="flex items-center font-medium">
@@ -357,13 +375,18 @@
                             </li>
                             <li class="flex items-center mt-6">
                                 <i class="fas fa-plus text-blue-800 mr-3"></i>
-                                <span>Additional exposure on 450+ media outlets</span>
+                                <span>Additional exposure across 400+ media outlets</span>
                                 <button class="ml-2 text-blue-800 hover:text-blue-900 group relative">
                                     <i class="fas fa-info-circle"></i>
                                     <div class="absolute bottom-full left-0 mb-2 w-64 bg-white text-sm p-4 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-10 text-gray-600">
-                                        Your news will be available to our network of 450+ additional outlets. While placement isn't guaranteed, this provides wider potential coverage.
+                                        Your news will be available to our network of additional media outlets. While placement isn't guaranteed, this provides wider potential coverage.
                                     </div>
                                 </button>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-info-circle text-blue-800 mr-3"></i>
+                                <span class="text-gray-600">View network coverage details</span>
+                                <a href="#" class="text-blue-800 ml-2 text-sm">(See Network List)</a>
                             </li>
                             <li class="flex items-center">
                                 <i class="fas fa-check text-green-500 mr-3"></i>
@@ -398,17 +421,23 @@
                         </ul>
                     </div>
                     <div class="p-8 bg-gray-50 mt-auto">
-                        <button id="basicPlanButton" class="w-full bg-blue-800 text-white py-3 rounded-lg hover:bg-blue-900 transition duration-300 font-semibold">
+                        <button id="essentialPlanButton" class="w-full bg-blue-800 text-white py-3 rounded-lg hover:bg-blue-900 transition duration-300 font-semibold">
                             Get Started
                         </button>
-                        <div class="flex items-center justify-center mt-4 space-x-4">
-                            <img src="./images/badges/secure-payment.svg" alt="Secure Payment" class="h-6">
-                            <img src="./images/badges/money-back.svg" alt="Money Back Guarantee" class="h-6">
+                        <div class="flex items-center justify-center mt-4 space-x-6 text-sm text-gray-600">
+                            <span class="flex items-center">
+                                <i class="fas fa-lock mr-2"></i>
+                                Secure Payment
+                            </span>
+                            <span class="flex items-center">
+                                <i class="fas fa-undo mr-2"></i>
+                                Money Back Guarantee
+                            </span>
                         </div>
                     </div>
                 </div>
     
-                <!-- Premium Plan -->
+                <!-- Elite Plan -->
                 <div class="bg-white rounded-xl shadow-lg overflow-hidden border-2 border-blue-800 h-full flex flex-col relative">
                     <div class="absolute top-0 left-0 w-full text-center">
                         <div class="inline-block bg-blue-800 text-white px-6 py-2 text-sm font-semibold rounded-b-lg">
@@ -416,14 +445,14 @@
                         </div>
                     </div>
                     <div class="p-8 flex-grow">
-                        <h3 class="text-2xl font-bold mb-4 mt-8">Premium Media Package</h3>
+                        <h3 class="text-2xl font-bold mb-4 mt-8">Elite Media Coverage</h3>
                         <div class="text-4xl font-bold mb-4">$1,499</div>
-                        <p class="text-gray-600 mb-8">Guaranteed placement on 400 premium media outlets with enhanced SEO impact</p>
+                        <p class="text-gray-600 mb-8">Guaranteed placement on 400+ premium media outlets with enhanced SEO impact</p>
                             
                         <ul class="space-y-4">
                             <li class="flex items-center font-medium">
                                 <i class="fas fa-check text-green-500 mr-3"></i>
-                                <span>Guaranteed Premium Placements Include:</span>
+                                <span>Featured Premium Placements Include:</span>
                             </li>
                             <li class="flex items-center ml-6">
                                 <i class="fas fa-star text-blue-800 mr-3"></i>
@@ -447,14 +476,18 @@
                             </li>
                             <li class="flex items-center mt-6">
                                 <i class="fas fa-plus text-blue-800 mr-3"></i>
-                                <span>395+ more premium outlets</span>
+                                <span>All placements guaranteed on our premium network</span>
                                 <button class="ml-2 text-blue-800 hover:text-blue-900 group relative">
                                     <i class="fas fa-info-circle"></i>
                                     <div class="absolute bottom-full left-0 mb-2 w-64 bg-white text-sm p-4 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-10 text-gray-600">
-                                        All 400 placements are guaranteed on high-authority media outlets. View complete list for details.
+                                        All placements are guaranteed on high-authority media outlets.
                                     </div>
                                 </button>
-                                <a href="#" class="text-blue-800 ml-2 text-sm underline">(View Full List)</a>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-info-circle text-blue-800 mr-3"></i>
+                                <span class="text-gray-600">View premium network details</span>
+                                <a href="#" class="text-blue-800 ml-2 text-sm">(See Network List)</a>
                             </li>
                             <li class="flex items-center">
                                 <i class="fas fa-check text-green-500 mr-3"></i>
@@ -489,12 +522,18 @@
                         </ul>
                     </div>
                     <div class="p-8 bg-gray-50 mt-auto">
-                        <button id="premiumPlanButton" class="w-full bg-blue-800 text-white py-3 rounded-lg hover:bg-blue-900 transition duration-300 font-semibold">
+                        <button id="elitePlanButton" class="w-full bg-blue-800 text-white py-3 rounded-lg hover:bg-blue-900 transition duration-300 font-semibold">
                             Get Started
                         </button>
-                        <div class="flex items-center justify-center mt-4 space-x-4">
-                            <img src="./images/badges/secure-payment.svg" alt="Secure Payment" class="h-6">
-                            <img src="./images/badges/money-back.svg" alt="Money Back Guarantee" class="h-6">
+                        <div class="flex items-center justify-center mt-4 space-x-6 text-sm text-gray-600">
+                            <span class="flex items-center">
+                                <i class="fas fa-lock mr-2"></i>
+                                Secure Payment
+                            </span>
+                            <span class="flex items-center">
+                                <i class="fas fa-undo mr-2"></i>
+                                Money Back Guarantee
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -531,31 +570,60 @@
                             <p class="flex items-center mb-3">
                                 <i class="fas fa-podcast text-blue-800 mr-3"></i>
                                 <span>Podchaser (DA85)</span>
-                            </p>
-                            <p class="flex items-center mb-3">
-                                <i class="fas fa-podcast text-blue-800 mr-3"></i>
-                                <span>Player FM (DA86)</span>
-                            </p>
-                            <p class="flex items-center">
-                                <i class="fas fa-podcast text-blue-800 mr-3"></i>
-                                <span>iHeart (DA91)</span>
-                            </p>
-                        </div>
-                    </div>
-                        
-                    <p class="text-sm text-gray-600 mb-8">Every platform placement guaranteed. Perfect complement to any coverage package.</p>
-                        
-                    <button id="podcastAddonButton" class="bg-blue-800 text-white px-8 py-3 rounded-lg hover:bg-blue-900 transition duration-300 font-semibold">
-                        Add to Your Package
-                    </button>
+                           </p>
+                           <p class="flex items-center mb-3">
+                               <i class="fas fa-podcast text-blue-800 mr-3"></i>
+                               <span>Player FM (DA86)</span>
+                           </p>
+                           <p class="flex items-center">
+                               <i class="fas fa-podcast text-blue-800 mr-3"></i>
+                               <span>iHeart (DA91)</span>
+                           </p>
+                       </div>
+                   </div>
+                       
+                   <p class="text-sm text-gray-600 mb-8">Every platform placement guaranteed. Perfect complement to any coverage package.</p>
+                       
+                   <button id="podcastAddonButton" class="bg-blue-800 text-white px-8 py-3 rounded-lg hover:bg-blue-900 transition duration-300 font-semibold">
+                       Add to Your Package
+                   </button>
     
-                    <div class="flex items-center justify-center mt-4 space-x-4">
-                        <img src="./images/badges/secure-payment.svg" alt="Secure Payment" class="h-6">
-                        <img src="./images/badges/money-back.svg" alt="Money Back Guarantee" class="h-6">
-                    </div>
-                </div>
-            </div>
-        </div>
+                   <div class="flex items-center justify-center mt-4 space-x-6 text-sm text-gray-600">
+                       <span class="flex items-center">
+                           <i class="fas fa-lock mr-2"></i>
+                           Secure Payment
+                       </span>
+                       <span class="flex items-center">
+                           <i class="fas fa-undo mr-2"></i>
+                           Money Back Guarantee
+                       </span>
+                   </div>
+               </div>
+           </div>
+    
+           <!-- Payment Security Footer -->
+           <div class="max-w-3xl mx-auto mt-16 text-center">
+               <div class="flex items-center justify-center space-x-8 text-gray-600">
+                   <div class="flex flex-col items-center">
+                       <i class="fab fa-cc-visa text-3xl mb-2"></i>
+                       <span class="text-xs">Visa</span>
+                   </div>
+                   <div class="flex flex-col items-center">
+                       <i class="fab fa-cc-mastercard text-3xl mb-2"></i>
+                       <span class="text-xs">Mastercard</span>
+                   </div>
+                   <div class="flex flex-col items-center">
+                       <i class="fab fa-cc-amex text-3xl mb-2"></i>
+                       <span class="text-xs">American Express</span>
+                   </div>
+                   <div class="flex flex-col items-center">
+                       <i class="fab fa-stripe text-3xl mb-2"></i>
+                       <span class="text-xs">Powered by Stripe</span>
+                   </div>
+               </div>
+               <p class="text-gray-500 text-sm mt-4">Your payment information is securely processed by Stripe</p>
+           </div>
+       </div>
     </div>
 
     <!-- Contact Section -->
