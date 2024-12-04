@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Press Elevate - Premium Media Distribution for Local Businesses</title>
-    <meta name="description" content="Get your business featured on MarketWatch, Yahoo Finance, and 300+ trusted media outlets. Guaranteed placements designed for local businesses and agencies.">
+    <title>Press Elevate - Professional Media Coverage</title>
+    <meta name="description" content="Get your business featured on MarketWatch, Yahoo Finance, and other leading media outlets. Guaranteed placements with transparent pricing.">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/api/placeholder/32/32" />
@@ -21,40 +21,37 @@
             font-family: 'Inter', sans-serif;
         }
         .gradient-hero {
-            background: linear-gradient(120deg, #0f2850 0%, #2c5282 100%);
-        }
-        .gradient-footer {
-            background: linear-gradient(120deg, #2c5282 0%, #0f2850 100%);
+            background: linear-gradient(135deg, #0a2540 0%, #1e3a8a 100%);
         }
         .feature-card {
             transition: all 0.3s ease;
         }
         .feature-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
         }
-        .region-selector {
-            position: fixed;
-            top: 0;
-            right: 20px;
-            z-index: 1000;
+        .media-logo {
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+        .media-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+        @media (max-width: 768px) {
+            .hero-text {
+                font-size: 2.25rem !important;
+            }
+            .pricing-card {
+                margin-bottom: 2rem;
+            }
         }
     </style>
 </head>
 <body class="bg-gray-50">
-    <!-- Region Selector -->
-    <div class="region-selector bg-white shadow-md rounded-b-lg px-4 py-2">
-        <select class="text-sm border-0 focus:ring-0">
-            <option value="us">United States</option>
-            <option value="uk">United Kingdom</option>
-            <option value="ca">Canada</option>
-            <option value="au">Australia</option>
-            <!-- Add other regions -->
-        </select>
-    </div>
-
     <!-- Navigation -->
-    <nav class="bg-white shadow-md fixed w-full z-40">
+    <nav class="bg-white shadow-md fixed w-full z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20">
                 <div class="flex items-center">
@@ -62,72 +59,87 @@
                 </div>
                 
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#how-it-works" class="text-gray-700 hover:text-blue-700 font-medium">How It Works</a>
-                    <a href="#examples" class="text-gray-700 hover:text-blue-700 font-medium">Success Stories</a>
-                    <a href="#pricing" class="text-gray-700 hover:text-blue-700 font-medium">Plans & Pricing</a>
-                    <a href="#contact" class="text-gray-700 hover:text-blue-700 font-medium">Contact</a>
-                    <a href="#pricing" class="bg-blue-700 text-white px-6 py-2 rounded-lg hover:bg-blue-800 font-semibold">
-                        View Pricing
+                    <a href="#how-it-works" class="text-gray-700 hover:text-blue-800 font-medium">How It Works</a>
+                    <a href="#coverage" class="text-gray-700 hover:text-blue-800 font-medium">Coverage</a>
+                    <a href="#pricing" class="text-gray-700 hover:text-blue-800 font-medium">Pricing</a>
+                    <a href="#contact" class="text-gray-700 hover:text-blue-800 font-medium">Contact</a>
+                    <a href="#pricing" class="bg-blue-800 text-white px-6 py-2 rounded-lg hover:bg-blue-900 font-semibold">
+                        View Plans
                     </a>
                 </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button class="mobile-menu-button p-2 rounded-md text-gray-700 hover:text-blue-800 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile menu -->
+            <div class="mobile-menu hidden md:hidden pb-4">
+                <a href="#how-it-works" class="block py-2 text-gray-700 hover:text-blue-800">How It Works</a>
+                <a href="#coverage" class="block py-2 text-gray-700 hover:text-blue-800">Coverage</a>
+                <a href="#pricing" class="block py-2 text-gray-700 hover:text-blue-800">Pricing</a>
+                <a href="#contact" class="block py-2 text-gray-700 hover:text-blue-800">Contact</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <div class="gradient-hero pt-28">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div class="gradient-hero pt-28 pb-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-4xl mx-auto">
-                <h1 class="text-4xl md:text-6xl font-bold text-white mb-8 leading-tight">
-                    Get Your Business Featured in Top News Outlets
+                <h1 class="hero-text text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight">
+                    Get Your Business Featured on Leading Media Outlets
                 </h1>
                 <p class="text-xl text-gray-100 mb-10 leading-relaxed">
-                    Guaranteed placement on MarketWatch, Yahoo Finance, and 300+ trusted media outlets. Build credibility and reach new customers with professional press coverage.
+                    Guaranteed placement on MarketWatch, Yahoo Finance, and 300+ trusted media outlets. Build credibility with professional media coverage.
                 </p>
                 
-                <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6 mb-16">
-                    <a href="#pricing" class="bg-white text-blue-700 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-50 transition duration-300 shadow-lg">
-                        See Our Plans
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-16">
+                    <a href="#pricing" class="bg-white text-blue-800 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-50 transition duration-300 shadow-lg">
+                        See Pricing
                     </a>
-                    <a href="#examples" class="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition duration-300 shadow-lg">
-                        View Success Stories
+                    <a href="#coverage" class="bg-blue-700 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-600 transition duration-300 shadow-lg">
+                        View Media Coverage
                     </a>
                 </div>
 
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-center">
-                    <div class="text-center">
-                        <div class="text-4xl font-bold text-white mb-2">300+</div>
-                        <div class="text-gray-200">News Outlets</div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 items-center">
+                    <div class="text-center bg-blue-800 bg-opacity-30 rounded-lg p-4">
+                        <div class="text-3xl sm:text-4xl font-bold text-white mb-2">300+</div>
+                        <div class="text-gray-200">Media Outlets</div>
                     </div>
-                    <div class="text-center">
-                        <div class="text-4xl font-bold text-white mb-2">100%</div>
-                        <div class="text-gray-200">Guaranteed Placement</div>
+                    <div class="text-center bg-blue-800 bg-opacity-30 rounded-lg p-4">
+                        <div class="text-3xl sm:text-4xl font-bold text-white mb-2">100%</div>
+                        <div class="text-gray-200">Guaranteed</div>
                     </div>
-                    <div class="text-center">
-                        <div class="text-4xl font-bold text-white mb-2">3-5</div>
+                    <div class="text-center bg-blue-800 bg-opacity-30 rounded-lg p-4">
+                        <div class="text-3xl sm:text-4xl font-bold text-white mb-2">3-5</div>
                         <div class="text-gray-200">Days Delivery</div>
                     </div>
-                    <div class="text-center">
-                        <div class="text-4xl font-bold text-white mb-2">10k+</div>
-                        <div class="text-gray-200">Businesses Served</div>
+                    <div class="text-center bg-blue-800 bg-opacity-30 rounded-lg p-4">
+                        <div class="text-3xl sm:text-4xl font-bold text-white mb-2">94</div>
+                        <div class="text-gray-200">Max Domain Authority</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Client Logos -->
+    <!-- Featured In -->
     <div class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4">
-            <p class="text-center text-gray-600 mb-10">Your news will appear on trusted media outlets including:</p>
+            <p class="text-center text-gray-600 mb-12 text-sm uppercase tracking-wider font-medium">Your news will appear on trusted media outlets including:</p>
             
-            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center">
-                <img src="/api/placeholder/160/80" alt="MarketWatch" class="mx-auto">
-                <img src="/api/placeholder/160/80" alt="Yahoo Finance" class="mx-auto">
-                <img src="/api/placeholder/160/80" alt="Digital Journal" class="mx-auto">
-                <img src="/api/placeholder/160/80" alt="Business Insider" class="mx-auto">
-                <img src="/api/placeholder/160/80" alt="Bloomberg" class="mx-auto">
-                <img src="/api/placeholder/160/80" alt="Associated Press" class="mx-auto">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
+                <img src="/api/placeholder/160/80" alt="MarketWatch" class="media-logo mx-auto">
+                <img src="/api/placeholder/160/80" alt="Yahoo Finance" class="media-logo mx-auto">
+                <img src="/api/placeholder/160/80" alt="Digital Journal" class="media-logo mx-auto">
+                <img src="/api/placeholder/160/80" alt="Business Insider" class="media-logo mx-auto">
+                <img src="/api/placeholder/160/80" alt="AP News" class="media-logo mx-auto">
+                <img src="/api/placeholder/160/80" alt="Bloomberg" class="media-logo mx-auto">
             </div>
         </div>
     </div>
@@ -137,160 +149,233 @@
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-6">Simple Three-Step Process</h2>
-                <p class="text-xl text-gray-600">Getting your business in the news has never been easier</p>
+                <p class="text-xl text-gray-600">Getting your business featured in the news made simple</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
                 <div class="text-center">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 text-2xl font-bold mx-auto mb-6">1</div>
-                    <h3 class="text-xl font-bold mb-4">Submit Your News</h3>
-                    <p class="text-gray-600">Send us your business announcement, achievement, or update</p>
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-800 text-2xl font-bold mx-auto mb-6">1</div>
+                    <h3 class="text-xl font-bold mb-4">Submit Your Story</h3>
+                    <p class="text-gray-600">Share your business news or announcement</p>
                 </div>
 
                 <div class="text-center">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 text-2xl font-bold mx-auto mb-6">2</div>
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-800 text-2xl font-bold mx-auto mb-6">2</div>
                     <h3 class="text-xl font-bold mb-4">Professional Distribution</h3>
-                    <p class="text-gray-600">We distribute your news to our network of 300+ media outlets</p>
+                    <p class="text-gray-600">We distribute to our network of media outlets</p>
                 </div>
 
                 <div class="text-center">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 text-2xl font-bold mx-auto mb-6">3</div>
-                    <h3 class="text-xl font-bold mb-4">Get Published</h3>
-                    <p class="text-gray-600">Receive links to your published news across major outlets</p>
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-800 text-2xl font-bold mx-auto mb-6">3</div>
+                    <h3 class="text-xl font-bold mb-4">Get Featured</h3>
+                    <p class="text-gray-600">Receive your media coverage within 3-5 days</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Pricing Section -->
-    <div id="pricing" class="py-20 bg-white">
+    <!-- Coverage Section -->
+    <div id="coverage" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6">Simple, Transparent Pricing</h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Our Media Network</h2>
+                <p class="text-xl text-gray-600">Get featured on respected media outlets that build credibility</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <div class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition duration-300">
+                    <h3 class="text-xl font-bold mb-4">Financial News</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span>MarketWatch</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span>Yahoo Finance</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span>Bloomberg</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition duration-300">
+                    <h3 class="text-xl font-bold mb-4">Major News Outlets</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span>Digital Journal</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span>Business Insider</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span>AP News</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition duration-300">
+                    <h3 class="text-xl font-bold mb-4">Digital Media</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span>Apple News</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span>Google News</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            <span>Benzinga</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <a href="#pricing" class="inline-flex items-center text-blue-800 hover:text-blue-900 font-semibold">
+                    View complete outlet list
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pricing Section -->
+    <div id="pricing" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Clear, Simple Pricing</h2>
                 <p class="text-xl text-gray-600">Choose the perfect plan for your business</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                 <!-- Standard Plan -->
-                <div class="bg-white rounded-xl shadow-xl overflow-hidden border border-gray-100">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
                     <div class="p-8">
                         <h3 class="text-2xl font-bold mb-4">Standard Coverage</h3>
                         <div class="text-4xl font-bold mb-4">$399</div>
-                        <p class="text-gray-600 mb-8">Perfect for local businesses</p>
+                        <p class="text-gray-600 mb-8">Essential media coverage package</p>
                         
                         <ul class="space-y-4">
-                            <li class="flex items-center">
+                            <li class="flex items-center font-medium">
                                 <i class="fas fa-check text-green-500 mr-3"></i>
                                 <span>Guaranteed placement on:</span>
                             </li>
                             <li class="flex items-center ml-6">
-                                <i class="fas fa-star text-yellow-400 mr-3"></i>
+                                <i class="fas fa-circle text-blue-800 mr-3 text-xs"></i>
                                 <span>Digital Journal</span>
                             </li>
                             <li class="flex items-center ml-6">
-                                <i class="fas fa-star text-yellow-400 mr-3"></i>
+                                <i class="fas fa-circle text-blue-800 mr-3 text-xs"></i>
                                 <span>Benzinga</span>
                             </li>
                             <li class="flex items-center ml-6">
-                                <i class="fas fa-star text-yellow-400 mr-3"></i>
+                                <i class="fas fa-circle text-blue-800 mr-3 text-xs"></i>
                                 <span>Fox40</span>
                             </li>
                             <li class="flex items-center">
                                 <i class="fas fa-check text-green-500 mr-3"></i>
-                                <span>Plus 300+ additional outlets</span>
-                                <a href="#" class="text-blue-600 ml-2 text-sm">(View Full List)</a>
+                                <span>300+ additional outlets</span>
+                                <a href="#" class="text-blue-800 ml-2 text-sm">(View List)</a>
                             </li>
                             <li class="flex items-center">
                                 <i class="fas fa-check text-green-500 mr-3"></i>
-                                <span>600 Word Maximum</span>
+                                <span>600 words maximum</span>
                             </li>
                             <li class="flex items-center">
                                 <i class="fas fa-check text-green-500 mr-3"></i>
-                                <span>3 Links Included</span>
+                                <span>3 embedded links</span>
                             </li>
                             <li class="flex items-center">
                                 <i class="fas fa-check text-green-500 mr-3"></i>
-                                <span>1 Image Included</span>
+                                <span>1 image included</span>
                             </li>
                             <li class="flex items-center">
                                 <i class="fas fa-check text-green-500 mr-3"></i>
-                                <span>3-5 Days Delivery</span>
+                                <span>3-5 business days delivery</span>
                             </li>
                             <li class="flex items-center">
                                 <i class="fas fa-check text-green-500 mr-3"></i>
-                                <span>Publication Report</span>
+                                <span>Coverage report provided</span>
                             </li>
                         </ul>
                     </div>
                     <div class="p-8 bg-gray-50">
-                        <button class="w-full bg-blue-700 text-white py-3 rounded-lg hover:bg-blue-800 transition duration-300 font-semibold">
+                        <button class="w-full bg-blue-800 text-white py-3 rounded-lg hover:bg-blue-900 transition duration-300 font-semibold">
                             Get Started
                         </button>
                     </div>
                 </div>
 
                 <!-- Premium Plan -->
-                <div class="bg-white rounded-xl shadow-xl overflow-hidden border-2 border-blue-700">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden border-2 border-blue-800">
                     <div class="p-8">
-                        <div class="inline-block px-4 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold mb-4">RECOMMENDED</div>
+                        <div class="inline-block px-4 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-semibold mb-4">MOST POPULAR</div>
                         <h3 class="text-2xl font-bold mb-4">Premium Coverage</h3>
                         <div class="text-4xl font-bold mb-4">$1,499</div>
-                        <p class="text-gray-600 mb-8">Maximum visibility on premium outlets</p>
+                        <p class="text-gray-600 mb-8">Maximum visibility package</p>
                         
                         <ul class="space-y-4">
-                            <li class="flex items-center">
+                            <li class="flex items-center font-medium">
                                 <i class="fas fa-check text-green-500 mr-3"></i>
                                 <span>Guaranteed placement on:</span>
                             </li>
                             <li class="flex items-center ml-6">
-                                <i class="fas fa-star text-yellow-400 mr-3"></i>
+                                <i class="fas fa-star text-blue-800 mr-3"></i>
                                 <span>MarketWatch</span>
                             </li>
                             <li class="flex items-center ml-6">
-                                <i class="fas fa-star text-yellow-400 mr-3"></i>
+                                <i class="fas fa-star text-blue-800 mr-3"></i>
                                 <span>Yahoo Finance</span>
                             </li>
                             <li class="flex items-center ml-6">
-                                <i class="fas fa-star text-yellow-400 mr-3"></i>
+                                <i class="fas fa-star text-blue-800 mr-3"></i>
                                 <span>Business Insider</span>
                             </li>
                             <li class="flex items-center ml-6">
-                                <i class="fas fa-star text-yellow-400 mr-3"></i>
+                                <i class="fas fa-star text-blue-800 mr-3"></i>
                                 <span>Digital Journal</span>
                             </li>
                             <li class="flex items-center ml-6">
-                                <i class="fas fa-star text-yellow-400 mr-3"></i>
+                                <i class="fas fa-star text-blue-800 mr-3"></i>
                                 <span>Apple News</span>
                             </li>
                             <li class="flex items-center">
                                 <i class="fas fa-check text-green-500 mr-3"></i>
-                                <span>Plus 300+ premium outlets</span>
-                                <a href="#" class="text-blue-600 ml-2 text-sm">(View Full List)</a>
+                                <span>300+ premium outlets</span>
+                                <a href="#" class="text-blue-800 ml-2 text-sm">(View List)</a>
                             </li>
                             <li class="flex items-center">
                                 <i class="fas fa-check text-green-500 mr-3"></i>
-                                <span>1200 Word Maximum</span>
+                                <span>1200 words maximum</span>
                             </li>
                             <li class="flex items-center">
                                 <i class="fas fa-check text-green-500 mr-3"></i>
-                                <span>10 Links Included</span>
+                                <span>10 embedded links</span>
                             </li>
                             <li class="flex items-center">
                                 <i class="fas fa-check text-green-500 mr-3"></i>
-                                <span>5 Images Included</span>
+                                <span>5 images included</span>
                             </li>
                             <li class="flex items-center">
                                 <i class="fas fa-check text-green-500 mr-3"></i>
-                                <span>3-5 Days Delivery</span>
+                                <span>3-5 business days delivery</span>
                             </li>
                             <li class="flex items-center">
                                 <i class="fas fa-check text-green-500 mr-3"></i>
-                                <span>Detailed Publication Report</span>
+                                <span>Detailed coverage report</span>
                             </li>
                         </ul>
                     </div>
                     <div class="p-8 bg-gray-50">
-                        <button class="w-full bg-blue-700 text-white py-3 rounded-lg hover:bg-blue-800 transition duration-300 font-semibold">
+                        <button class="w-full bg-blue-800 text-white py-3 rounded-lg hover:bg-blue-900 transition duration-300 font-semibold">
                             Get Started
                         </button>
                     </div>
@@ -300,91 +385,51 @@
             <!-- Podcast Add-on -->
             <div class="mt-16 max-w-3xl mx-auto bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-8 border border-blue-100">
                 <div class="text-center">
-                    <span class="inline-block px-4 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold mb-4">ADDITIONAL COVERAGE</span>
+                    <span class="inline-block px-4 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-semibold mb-4">OPTIONAL ADD-ON</span>
                     <h3 class="text-2xl font-bold mb-4">Podcast Network Package</h3>
-                    <p class="text-gray-600 mb-6">Expand your reach with guaranteed podcast platform coverage</p>
+                    <p class="text-gray-600 mb-6">Extend your reach with guaranteed podcast platform coverage</p>
                     <div class="text-3xl font-bold mb-8">$499</div>
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left max-w-xl mx-auto mb-8">
                         <div>
                             <p class="flex items-center mb-3">
-                                <i class="fas fa-podcast text-blue-700 mr-3"></i>
-                                <span>Guaranteed on Spotify (DA95)</span>
+                                <i class="fas fa-podcast text-blue-800 mr-3"></i>
+                                <span>Spotify (DA95)</span>
                             </p>
                             <p class="flex items-center mb-3">
-                                <i class="fas fa-podcast text-blue-700 mr-3"></i>
-                                <span>Guaranteed on Apple Podcasts (DA97)</span>
+                                <i class="fas fa-podcast text-blue-800 mr-3"></i>
+                                <span>Apple Podcasts (DA97)</span>
                             </p>
                             <p class="flex items-center mb-3">
-                                <i class="fas fa-podcast text-blue-700 mr-3"></i>
-                                <span>Guaranteed on Amazon Music (DA96)</span>
+                                <i class="fas fa-podcast text-blue-800 mr-3"></i>
+                                <span>Amazon Music (DA96)</span>
                             </p>
                             <p class="flex items-center">
-                                <i class="fas fa-podcast text-blue-700 mr-3"></i>
-                                <span>Guaranteed on Podbean (DA90)</span>
+                                <i class="fas fa-podcast text-blue-800 mr-3"></i>
+                                <span>Podbean (DA90)</span>
                             </p>
                         </div>
                         <div>
                             <p class="flex items-center mb-3">
-                                <i class="fas fa-podcast text-blue-700 mr-3"></i>
-                                <span>Guaranteed on Podchaser (DA85)</span>
+                                <i class="fas fa-podcast text-blue-800 mr-3"></i>
+                                <span>Podchaser (DA85)</span>
                             </p>
                             <p class="flex items-center mb-3">
-                                <i class="fas fa-podcast text-blue-700 mr-3"></i>
-                                <span>Guaranteed on Player FM (DA86)</span>
+                                <i class="fas fa-podcast text-blue-800 mr-3"></i>
+                                <span>Player FM (DA86)</span>
                             </p>
                             <p class="flex items-center">
-                                <i class="fas fa-podcast text-blue-700 mr-3"></i>
-                                <span>Guaranteed on iHeart (DA91)</span>
+                                <i class="fas fa-podcast text-blue-800 mr-3"></i>
+                                <span>iHeart (DA91)</span>
                             </p>
                         </div>
                     </div>
                     
-                    <button class="bg-blue-700 text-white px-8 py-3 rounded-lg hover:bg-blue-800 transition duration-300 font-semibold">
+                    <p class="text-sm text-gray-600 mb-8">All placements guaranteed. Perfect complement to any coverage package.</p>
+                    
+                    <button class="bg-blue-800 text-white px-8 py-3 rounded-lg hover:bg-blue-900 transition duration-300 font-semibold">
                         Add to Your Package
                     </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Success Stories -->
-    <div id="examples" class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6">Success Stories</h2>
-                <p class="text-xl text-gray-600">See how local businesses like yours gained media coverage</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Case Study 1 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="/api/placeholder/400/200" alt="Success Story 1" class="w-full">
-                    <div class="p-6">
-                        <h3 class="font-bold text-xl mb-2">Local Restaurant Chain</h3>
-                        <p class="text-gray-600 mb-4">Featured on Business Insider and 300+ outlets, leading to 40% increase in reservations</p>
-                        <a href="#" class="text-blue-700 font-semibold hover:text-blue-800">Read More →</a>
-                    </div>
-                </div>
-
-                <!-- Case Study 2 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="/api/placeholder/400/200" alt="Success Story 2" class="w-full">
-                    <div class="p-6">
-                        <h3 class="font-bold text-xl mb-2">Real Estate Agency</h3>
-                        <p class="text-gray-600 mb-4">Coverage on MarketWatch boosted credibility, resulting in 25% more client inquiries</p>
-                        <a href="#" class="text-blue-700 font-semibold hover:text-blue-800">Read More →</a>
-                    </div>
-                </div>
-
-                <!-- Case Study 3 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="/api/placeholder/400/200" alt="Success Story 3" class="w-full">
-                    <div class="p-6">
-                        <h3 class="font-bold text-xl mb-2">Tech Startup</h3>
-                        <p class="text-gray-600 mb-4">Yahoo Finance coverage helped secure local partnerships and investment interest</p>
-                        <a href="#" class="text-blue-700 font-semibold hover:text-blue-800">Read More →</a>
-                    </div>
                 </div>
             </div>
         </div>
@@ -394,49 +439,62 @@
     <div id="contact" class="py-20 bg-white">
         <div class="max-w-4xl mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6">Get Started Today</h2>
-                <p class="text-xl text-gray-600">Questions? Our team is here to help</p>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Get Started?</h2>
+                <p class="text-xl text-gray-600">Get in touch and we'll help you choose the perfect coverage plan</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-gray-50 rounded-xl p-8">
-                    <h3 class="font-bold text-xl mb-4">Contact Us</h3>
-                    <form>
-                        <div class="mb-4">
-                            <label class="block text-gray-700 mb-2">Name</label>
-                            <input type="text" class="w-full p-3 rounded-lg border border-gray-300">
-                        </div>
-                        <div class="mb-4">
-                            <label class="block text-gray-700 mb-2">Email</label>
-                            <input type="email" class="w-full p-3 rounded-lg border border-gray-300">
-                        </div>
-                        <div class="mb-4">
-                            <label class="block text-gray-700 mb-2">Message</label>
-                            <textarea class="w-full p-3 rounded-lg border border-gray-300" rows="4"></textarea>
-                        </div>
-                        <button class="w-full bg-blue-700 text-white py-3 rounded-lg hover:bg-blue-800 transition duration-300 font-semibold">
-                            Send Message
-                        </button>
-                    </form>
-                </div>
+            <div class="bg-gray-50 rounded-xl p-8 shadow-lg">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="font-bold text-xl mb-6">Contact Us</h3>
+                        <form class="space-y-4">
+                            <div>
+                                <label class="block text-gray-700 mb-2 font-medium">Name</label>
+                                <input type="text" 
+                                    class="w-full p-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition duration-200"
+                                    placeholder="Your name">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2 font-medium">Email</label>
+                                <input type="email" 
+                                    class="w-full p-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition duration-200"
+                                    placeholder="your@email.com">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2 font-medium">Message</label>
+                                <textarea 
+                                    class="w-full p-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition duration-200" 
+                                    rows="4"
+                                    placeholder="Tell us about your business and coverage needs"></textarea>
+                            </div>
+                            <button class="w-full bg-blue-800 text-white py-3 rounded-lg hover:bg-blue-900 transition duration-300 font-semibold">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
 
-                <div class="bg-gray-50 rounded-xl p-8">
-                    <h3 class="font-bold text-xl mb-4">Regional Offices</h3>
-                    <div class="space-y-6">
-                        <div>
-                            <h4 class="font-semibold mb-2">North America</h4>
-                            <p class="text-gray-600">1-800-XXX-XXXX</p>
-                            <p class="text-gray-600">na@presselevate.com</p>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold mb-2">Asia Pacific</h4>
-                            <p class="text-gray-600">+65 XXXX XXXX</p>
-                            <p class="text-gray-600">apac@presselevate.com</p>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold mb-2">Europe</h4>
-                            <p class="text-gray-600">+44 XXXX XXXX</p>
-                            <p class="text-gray-600">eu@presselevate.com</p>
+                    <div class="border-t pt-8 md:pt-0 md:border-t-0 md:border-l md:pl-8">
+                        <h3 class="font-bold text-xl mb-6">Quick Connect</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <p class="font-medium mb-2">Email</p>
+                                <a href="mailto:hello@presselevate.com" class="text-blue-800 hover:text-blue-900">
+                                    hello@presselevate.com
+                                </a>
+                            </div>
+                            <div>
+                                <p class="font-medium mb-2">Response Time</p>
+                                <p class="text-gray-600">We typically respond within 2 business hours</p>
+                            </div>
+                            <div>
+                                <p class="font-medium mb-2">Business Hours</p>
+                                <p class="text-gray-600">Monday - Friday: 9:00 AM - 6:00 PM EST</p>
+                            </div>
+                            <div class="pt-6">
+                                <p class="text-sm text-gray-500">
+                                    For fastest service, please include your business name and preferred coverage plan in your message.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -444,60 +502,104 @@
         </div>
     </div>
 
+    <!-- FAQ Section -->
+    <div class="py-20 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Common Questions</h2>
+                <p class="text-xl text-gray-600">Everything you need to know about our service</p>
+            </div>
+
+            <div class="space-y-6">
+                <div class="bg-white rounded-lg shadow-sm p-6">
+                    <h3 class="font-bold text-lg mb-3">How long does distribution take?</h3>
+                    <p class="text-gray-600">Distribution typically takes 3-5 business days from submission to publication across our media network.</p>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-sm p-6">
+                    <h3 class="font-bold text-lg mb-3">Are the placements guaranteed?</h3>
+                    <p class="text-gray-600">Yes, all placements listed in your chosen package are 100% guaranteed. You'll receive links to all publications.</p>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-sm p-6">
+                    <h3 class="font-bold text-lg mb-3">What kind of news can I distribute?</h3>
+                    <p class="text-gray-600">We distribute company news, product launches, business milestones, appointments, and other newsworthy business announcements.</p>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-sm p-6">
+                    <h3 class="font-bold text-lg mb-3">Do you help with writing?</h3>
+                    <p class="text-gray-600">While we focus on distribution, we're happy to provide basic editorial feedback on your press release to ensure the best possible coverage.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
-    <footer class="gradient-footer text-white pt-20 pb-10">
+    <footer class="bg-gray-900 text-white pt-20 pb-10">
         <div class="max-w-7xl mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-                <div>
+                <div class="col-span-1 md:col-span-2">
                     <img src="/api/placeholder/160/40" alt="Press Elevate" class="h-8 mb-6">
-                    <p class="text-gray-300 mb-4">Professional media coverage for local businesses worldwide</p>
+                    <p class="text-gray-400 mb-4">Professional media coverage for businesses worldwide. Get featured on leading news outlets and build your brand's credibility.</p>
                     <div class="flex space-x-4">
-                        <a href="#" class="text-gray-300 hover:text-white">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-200">
                             <i class="fab fa-linkedin"></i>
                         </a>
-                        <a href="#" class="text-gray-300 hover:text-white">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                        <a href="#" class="text-gray-300 hover:text-white">
-                            <i class="fab fa-instagram"></i>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-200">
+                            <i class="fab fa-twitter"></i>
                         </a>
                     </div>
                 </div>
                 
                 <div>
-                    <h4 class="font-semibold mb-4">Services</h4>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
                     <ul class="space-y-2">
-                        <li><a href="#pricing" class="text-gray-300 hover:text-white">Distribution Plans</a></li>
-                        <li><a href="#network" class="text-gray-300 hover:text-white">Media Network</a></li>
-                        <li><a href="#examples" class="text-gray-300 hover:text-white">Success Stories</a></li>
+                        <li><a href="#pricing" class="text-gray-400 hover:text-white transition duration-200">Pricing</a></li>
+                        <li><a href="#coverage" class="text-gray-400 hover:text-white transition duration-200">Coverage</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition duration-200">Contact</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h4 class="font-semibold mb-4">Company</h4>
+                    <h4 class="font-semibold mb-4">Legal</h4>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-300 hover:text-white">About Us</a></li>
-                        <li><a href="#contact" class="text-gray-300 hover:text-white">Contact</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white">Terms</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white">Privacy</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="font-semibold mb-4">Regional Sites</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-300 hover:text-white">United States</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white">United Kingdom</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white">Asia Pacific</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white">Europe</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-200">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-200">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-200">Refund Policy</a></li>
                     </ul>
                 </div>
             </div>
 
-            <div class="text-center text-gray-400 text-sm">
+            <div class="text-center text-gray-500 text-sm pt-8 border-t border-gray-800">
                 <p>&copy; 2024 Press Elevate. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" 
+        class="fixed bottom-8 right-8 bg-blue-800 text-white p-3 rounded-full shadow-lg hover:bg-blue-900 transition duration-300 opacity-0 invisible"
+        onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-button').addEventListener('click', function() {
+            document.querySelector('.mobile-menu').classList.toggle('hidden');
+        });
+
+        // Back to top button visibility
+        window.addEventListener('scroll', function() {
+            const backToTopButton = document.getElementById('backToTop');
+            if (window.scrollY > 500) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.add('opacity-0', 'invisible');
+                backToTopButton.classList.remove('opacity-100', 'visible');
+            }
+        });
+    </script>
 </body>
 </html>
