@@ -963,22 +963,31 @@
         }
 
         function showLegalPage(pageId) {
-            // Hide all major sections
-            document.querySelectorAll('div[id]:not([id="modalBackdrop"]):not([id="essentialModal"]):not([id="eliteModal"])').forEach(div => {
-                if (div.id !== 'legalPages') {
-                    div.classList.add('hidden');
+            // Hide pricing, hero, coverage, etc sections
+            const mainSections = [
+                'pricing', 'coverage', 'how-it-works', 'contact',
+                document.querySelector('.gradient-hero'),
+                document.querySelector('.py-16.bg-white'),
+                document.querySelector('.py-20.bg-gray-50:not(#pricing)')
+            ];
+            
+            mainSections.forEach(section => {
+                if (typeof section === 'string') {
+                    const elem = document.getElementById(section);
+                    if (elem) elem.classList.add('hidden');
+                } else if (section) {
+                    section.classList.add('hidden');
                 }
             });
-            
-            // Show legal pages container
+        
+            // Show legal content
             document.getElementById('legalPages').classList.remove('hidden');
             
-            // Show specific legal page, hide others
+            // Show specific legal page
             document.querySelectorAll('#legalPages > div').forEach(div => {
                 div.classList.toggle('hidden', div.id !== pageId);
             });
             
-            // Scroll to top
             window.scrollTo(0, 0);
         }
 
