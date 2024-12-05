@@ -51,7 +51,7 @@
 </head>
 <body class="bg-gray-50">
     <!-- Legal Pages -->
-    <div id="legalPages" class="hidden bg-white min-h-screen pt-24">
+    <div id="legalPages">
         <!-- Terms of Service -->
         <div id="terms" class="max-w-4xl mx-auto px-4 py-16">
             <h2 class="text-3xl font-bold mb-8">Terms of Service</h2>
@@ -68,26 +68,19 @@
             <div class="prose max-w-none">
                 <h3 class="text-xl font-bold mt-8 mb-4">Information Collection</h3>
                 <p>We collect information that you provide...</p>
-Definitions
+                1.	Definitions
 Wherever we talk about Personal Data below (“Personal Data”), we mean any information that can either itself identify you as an individual (“Personally Identifying Information”) or that can be connected to you indirectly by linking it to Personally Identifying Information, for example:
-
 (i) your account registration information on our website and in our App;
-
 (ii) when you request any support from us or report any problem to us;
-
 (iii) information provided from using certain services or features;
-
 (iv) information from completion of survey or questionnaire;
-
 (v) technical information, including the Internet protocol (IP) address used
-
 (vi) and your log-in information, browser, time zone setting, browser plug-in types and versions, operating system and platform;
-
 (vii) details of any transactions, purchases and payments you made;
-
 (viii) your general interaction with the website, including the full Uniform Resource Locators (URLs), clickstream to, through and from our site, products you viewed or searched for, page response times, download errors, length of visits to certain pages, page interaction information;
-
 (ix) information received from third parties, such as business partners, sub-contractors, payment and delivery services, referrals by other users.
+The Company also processes anonymous data, aggregated or not, to analyze and produce statistics related to the habits, usage patterns, and demographics of customers as a group or as individuals. Such anonymous data does not allow the identification of the customers to which it relates. the Company may share anonymous data, aggregated or not, with third parties. Please be aware that the Company may choose to permit third parties to offer subscription and/or registration-based services through the Company’s site. The Company shall not be responsible for any actions or policies of such third parties and you should check the applicable privacy policy of such party when providing personally identifiable information.
+
             </div>
         </div>
     
@@ -982,29 +975,27 @@ Wherever we talk about Personal Data below (“Personal Data”), we mean any in
         }
 
         function showLegalPage(pageId) {
-            event.preventDefault();
-            
             // Hide main content container
             document.querySelector('body > div:not(#legalPages)').style.display = 'none';
             
             // Show legal pages container
             const legalPages = document.getElementById('legalPages');
-            legalPages.classList.remove('hidden');
+            legalPages.style.display = 'block';
             
             // Show selected legal page
             document.querySelectorAll('#legalPages > div').forEach(div => {
-                div.classList.toggle('hidden', div.id !== pageId);
+                div.style.display = div.id === pageId ? 'block' : 'none';
             });
             
             // Add back button
             if (!document.getElementById('backButton')) {
                 const backButton = document.createElement('button');
                 backButton.id = 'backButton';
-                backButton.className = 'fixed top-24 left-4 bg-blue-800 text-white px-4 py-2 rounded-lg hover:bg-blue-900';
+                backButton.className = 'fixed top-4 left-4 bg-blue-800 text-white px-4 py-2 rounded-lg hover:bg-blue-900';
                 backButton.innerHTML = '← Back to Home';
                 backButton.onclick = function() {
                     document.querySelector('body > div:not(#legalPages)').style.display = 'block';
-                    legalPages.classList.add('hidden');
+                    legalPages.style.display = 'none';
                     this.remove();
                 };
                 document.body.appendChild(backButton);
