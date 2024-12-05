@@ -50,6 +50,71 @@
     </style>
 </head>
 <body class="bg-gray-50">
+    <!-- Modal Backdrop -->
+    <div id="modalBackdrop" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50"></div>
+    
+    <!-- Essential Plan Modal -->
+    <div id="essentialModal" class="fixed inset-0 flex items-center justify-center hidden z-50">
+        <div class="bg-white rounded-lg p-8 max-w-md w-full mx-4">
+            <h3 class="text-2xl font-bold mb-4">Choose Your Package</h3>
+            <div class="space-y-4">
+                <div class="border rounded-lg p-4 cursor-pointer hover:border-blue-500" onclick="selectEssentialPackage('basic')">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <h4 class="font-bold">Essential Media Coverage</h4>
+                            <p class="text-gray-600">Base package</p>
+                        </div>
+                        <div class="text-xl font-bold">$399</div>
+                    </div>
+                </div>
+                <div class="border rounded-lg p-4 cursor-pointer hover:border-blue-500" onclick="selectEssentialPackage('bundle')">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <h4 class="font-bold">Essential + Podcast Bundle</h4>
+                            <p class="text-gray-600">Save $100 with bundle</p>
+                        </div>
+                        <div>
+                            <div class="text-xl font-bold">$798</div>
+                            <div class="text-sm text-gray-500 line-through">$898</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button onclick="closeModal('essentialModal')" class="mt-6 text-gray-600 hover:text-gray-800">Cancel</button>
+        </div>
+    </div>
+    
+    <!-- Elite Plan Modal -->
+    <div id="eliteModal" class="fixed inset-0 flex items-center justify-center hidden z-50">
+        <div class="bg-white rounded-lg p-8 max-w-md w-full mx-4">
+            <h3 class="text-2xl font-bold mb-4">Choose Your Package</h3>
+            <div class="space-y-4">
+                <div class="border rounded-lg p-4 cursor-pointer hover:border-blue-500" onclick="selectElitePackage('basic')">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <h4 class="font-bold">Elite Media Coverage</h4>
+                            <p class="text-gray-600">Base package</p>
+                        </div>
+                        <div class="text-xl font-bold">$1,499</div>
+                    </div>
+                </div>
+                <div class="border rounded-lg p-4 cursor-pointer hover:border-blue-500" onclick="selectElitePackage('bundle')">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <h4 class="font-bold">Elite + Podcast Bundle</h4>
+                            <p class="text-gray-600">Save $100 with bundle</p>
+                        </div>
+                        <div>
+                            <div class="text-xl font-bold">$1,898</div>
+                            <div class="text-sm text-gray-500 line-through">$1,998</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button onclick="closeModal('eliteModal')" class="mt-6 text-gray-600 hover:text-gray-800">Cancel</button>
+        </div>
+    </div>
+    
     <!-- Navigation -->
     <nav class="bg-white shadow-md fixed w-full z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -691,6 +756,39 @@
         </div>
     </div>
 
+    <!-- Legal Pages -->
+    <div class="hidden">
+        <!-- Terms of Service -->
+        <div id="terms" class="max-w-4xl mx-auto px-4 py-16">
+            <h2 class="text-3xl font-bold mb-8">Terms of Service</h2>
+            <div class="prose max-w-none">
+                <h3 class="text-xl font-bold mt-8 mb-4">1. Services Provided</h3>
+                <p>Press Elevate provides media coverage services...</p>
+                <!-- Add your terms content here -->
+            </div>
+        </div>
+    
+        <!-- Privacy Policy -->
+        <div id="privacy" class="max-w-4xl mx-auto px-4 py-16">
+            <h2 class="text-3xl font-bold mb-8">Privacy Policy</h2>
+            <div class="prose max-w-none">
+                <h3 class="text-xl font-bold mt-8 mb-4">Information Collection</h3>
+                <p>We collect information that you provide...</p>
+                <!-- Add your privacy policy content here -->
+            </div>
+        </div>
+    
+        <!-- Refund Policy -->
+        <div id="refund" class="max-w-4xl mx-auto px-4 py-16">
+            <h2 class="text-3xl font-bold mb-8">Refund Policy</h2>
+            <div class="prose max-w-none">
+                <h3 class="text-xl font-bold mt-8 mb-4">Refund Eligibility</h3>
+                <p>Our refund policy is designed to be fair...</p>
+                <!-- Add your refund policy content here -->
+            </div>
+        </div>
+    </div>
+    
     <!-- Footer -->
     <footer class="bg-gray-900 text-white pt-20 pb-10">
         <div class="max-w-7xl mx-auto px-4">
@@ -720,9 +818,9 @@
                 <div>
                     <h4 class="font-semibold mb-4">Legal</h4>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-200">Terms of Service</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-200">Privacy Policy</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-200">Refund Policy</a></li>
+                        <li><a href="#" onclick="showLegalPage('terms')" class="text-gray-400 hover:text-white transition duration-200">Terms of Service</a></li>
+                        <li><a href="#" onclick="showLegalPage('privacy')" class="text-gray-400 hover:text-white transition duration-200">Privacy Policy</a></li>
+                        <li><a href="#" onclick="showLegalPage('refund')" class="text-gray-400 hover:text-white transition duration-200">Refund Policy</a></li>
                     </ul>
                 </div>
             </div>
@@ -757,6 +855,42 @@
                 backToTopButton.classList.remove('opacity-100', 'visible');
             }
         });
+
+        // Modal functions
+        function showModal(modalId) {
+            document.getElementById('modalBackdrop').classList.remove('hidden');
+            document.getElementById(modalId).classList.remove('hidden');
+        }
+    
+        function closeModal(modalId) {
+            document.getElementById('modalBackdrop').classList.add('hidden');
+            document.getElementById(modalId).classList.add('hidden');
+        }
+    
+        function selectEssentialPackage(type) {
+            if (type === 'basic') {
+                window.location.href = 'https://buy.stripe.com/6oE6ov1HTc2R0ZW3cj';
+            } else {
+                window.location.href = 'https://buy.stripe.com/essential_bundle_link';
+            }
+        }
+    
+        function selectElitePackage(type) {
+            if (type === 'basic') {
+                window.location.href = 'https://buy.stripe.com/bIYaELaepgj76kg6ow';
+            } else {
+                window.location.href = 'https://buy.stripe.com/elite_bundle_link';
+            }
+        }
+
+        function showLegalPage(pageId) {
+            // Hide all sections first
+            document.querySelectorAll('main > div').forEach(div => div.classList.add('hidden'));
+            // Show the selected legal page
+            document.getElementById(pageId).classList.remove('hidden');
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
     </script>
 </body>
 </html>
