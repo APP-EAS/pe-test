@@ -1142,21 +1142,24 @@ This privacy policy was last updated on 12 July 2023 (“Revision Date”). If y
         }
 
         function showLegalPage(pageId) {
-            // Prevent default scroll
             event.preventDefault();
             
-            // Hide main content sections
-            document.querySelectorAll('.gradient-hero, .py-16, .py-20').forEach(section => {
-                section.classList.add('hidden');
+            // Hide all content except navigation
+            const mainContent = document.querySelectorAll('body > div:not(#modalBackdrop):not(#essentialModal):not(#eliteModal):not(#podcastModal):not(#legalPages), body > footer');
+            mainContent.forEach(element => {
+                element.style.display = 'none';
             });
             
-            // Show legal pages container and correct page
-            document.getElementById('legalPages').classList.remove('hidden');
+            // Show legal pages container
+            const legalPages = document.getElementById('legalPages');
+            legalPages.style.display = 'block';
+            
+            // Show selected page, hide others
             document.querySelectorAll('#legalPages > div').forEach(div => {
-                div.classList.toggle('hidden', div.id !== pageId);
+                div.style.display = div.id === pageId ? 'block' : 'none';
             });
-        
-            // Add back button
+            
+            // Add back button if not exists
             if (!document.getElementById('backButton')) {
                 const backButton = document.createElement('button');
                 backButton.id = 'backButton';
