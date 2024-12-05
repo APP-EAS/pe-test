@@ -897,9 +897,9 @@
                 <div>
                     <h4 class="font-semibold mb-4">Legal</h4>
                     <ul class="space-y-2">
-                        <li><a href="#" onclick="showLegalPage('terms')" class="text-gray-400 hover:text-white transition duration-200">Terms of Service</a></li>
-                        <li><a href="#" onclick="showLegalPage('privacy')" class="text-gray-400 hover:text-white transition duration-200">Privacy Policy</a></li>
-                        <li><a href="#" onclick="showLegalPage('refund')" class="text-gray-400 hover:text-white transition duration-200">Refund Policy</a></li>
+                        <li><a href="#" onclick="event.preventDefault(); showLegalPage('terms')" class="text-gray-400 hover:text-white transition duration-200">Terms of Service</a></li>
+                        <li><a href="#" onclick="event.preventDefault(); showLegalPage('privacy')" class="text-gray-400 hover:text-white transition duration-200">Privacy Policy</a></li>
+                        <li><a href="#" onclick="event.preventDefault(); showLegalPage('refund')" class="text-gray-400 hover:text-white transition duration-200">Refund Policy</a></li>
                     </ul>
                 </div>
             </div>
@@ -963,31 +963,23 @@
         }
 
         function showLegalPage(pageId) {
-            // Hide pricing, hero, coverage, etc sections
-            const mainSections = [
-                'pricing', 'coverage', 'how-it-works', 'contact',
-                document.querySelector('.gradient-hero'),
-                document.querySelector('.py-16.bg-white'),
-                document.querySelector('.py-20.bg-gray-50:not(#pricing)')
-            ];
+            // Prevent default scroll
+            event.preventDefault();
             
-            mainSections.forEach(section => {
-                if (typeof section === 'string') {
-                    const elem = document.getElementById(section);
-                    if (elem) elem.classList.add('hidden');
-                } else if (section) {
-                    section.classList.add('hidden');
-                }
+            // Hide all major sections
+            document.querySelectorAll('body > div:not([id="modalBackdrop"]):not([id="essentialModal"]):not([id="eliteModal"]):not([id="podcastModal"]):not([id="legalPages"])').forEach(div => {
+                div.classList.add('hidden');
             });
-        
-            // Show legal content
+            
+            // Show legal pages container
             document.getElementById('legalPages').classList.remove('hidden');
             
-            // Show specific legal page
+            // Show selected legal page, hide others
             document.querySelectorAll('#legalPages > div').forEach(div => {
                 div.classList.toggle('hidden', div.id !== pageId);
             });
             
+            // Scroll to top
             window.scrollTo(0, 0);
         }
 
