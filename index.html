@@ -905,7 +905,7 @@ The Company also processes anonymous data, aggregated or not, to analyze and pro
                         <li><a href="#contact" class="text-gray-400 hover:text-white transition duration-200">Contact</a></li>
                     </ul>
                 </div>
-
+    
                 <div>
                     <h4 class="font-semibold mb-4">Legal</h4>
                     <ul class="space-y-2">
@@ -915,7 +915,7 @@ The Company also processes anonymous data, aggregated or not, to analyze and pro
                     </ul>
                 </div>
             </div>
-
+    
             <div class="text-center text-gray-500 text-sm pt-8 border-t border-gray-800">
                 <p>&copy; 2024 Press Elevate. All rights reserved.</p>
             </div>
@@ -987,6 +987,9 @@ The Company also processes anonymous data, aggregated or not, to analyze and pro
                 div.style.display = div.id === pageId ? 'block' : 'none';
             });
             
+            // Update URL
+            window.history.pushState({}, '', `/${pageId}`);
+            
             // Add back button
             if (!document.getElementById('backButton')) {
                 const backButton = document.createElement('button');
@@ -996,6 +999,7 @@ The Company also processes anonymous data, aggregated or not, to analyze and pro
                 backButton.onclick = function() {
                     document.querySelector('body > div:not(#legalPages)').style.display = 'block';
                     legalPages.style.display = 'none';
+                    window.history.pushState({}, '', '/');
                     this.remove();
                 };
                 document.body.appendChild(backButton);
