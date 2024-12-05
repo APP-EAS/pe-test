@@ -864,9 +864,9 @@
                 <div>
                     <h4 class="font-semibold mb-4">Legal</h4>
                     <ul class="space-y-2">
-                        <li><a href="#" onclick="event.preventDefault(); showLegalPage('terms')" class="text-gray-400 hover:text-white transition duration-200">Terms of Service</a></li>
-                        <li><a href="#" onclick="event.preventDefault(); showLegalPage('privacy')" class="text-gray-400 hover:text-white transition duration-200">Privacy Policy</a></li>
-                        <li><a href="#" onclick="event.preventDefault(); showLegalPage('refund')" class="text-gray-400 hover:text-white transition duration-200">Refund Policy</a></li>
+                        <li><a href="https://www.example.com/terms" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition duration-200">Terms of Service</a></li>
+                        <li><a href="https://www.example.com/privacy" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition duration-200">Privacy Policy</a></li>
+                        <li><a href="https://www.example.com/refund" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition duration-200">Refund Policy</a></li>
                     </ul>
                 </div>
             </div>
@@ -929,38 +929,6 @@
             }
         }
 
-        function showLegalPage(pageId) {
-            // Hide main content container
-            document.querySelector('body > div:not(#legalPages)').style.display = 'none';
-            
-            // Show legal pages container
-            const legalPages = document.getElementById('legalPages');
-            legalPages.style.display = 'block';
-            
-            // Show selected legal page
-            document.querySelectorAll('#legalPages > div').forEach(div => {
-                div.style.display = div.id === pageId ? 'block' : 'none';
-            });
-            
-            // Update URL
-            window.history.pushState({}, '', `/${pageId}`);
-            
-            // Add back button
-            if (!document.getElementById('backButton')) {
-                const backButton = document.createElement('button');
-                backButton.id = 'backButton';
-                backButton.className = 'fixed top-4 left-4 bg-blue-800 text-white px-4 py-2 rounded-lg hover:bg-blue-900';
-                backButton.innerHTML = '← Back to Home';
-                backButton.onclick = function() {
-                    document.querySelector('body > div:not(#legalPages)').style.display = 'block';
-                    legalPages.style.display = 'none';
-                    window.history.pushState({}, '', '/');
-                    this.remove();
-                };
-                document.body.appendChild(backButton);
-            }
-        }
-
         function selectPodcastPackage(type) {
             switch(type) {
                 case 'standalone':
@@ -975,49 +943,6 @@
             }
         }
     </script>
-    <!-- Legal Pages -->
-    <div id="legalPages" style="display: none;">
-        <!-- Terms of Service -->
-        <div id="terms" class="max-w-4xl mx-auto px-4 py-16">
-            <h2 class="text-3xl font-bold mb-8">Terms of Service</h2>
-            <div class="prose max-w-none">
-                <h3 class="text-xl font-bold mt-8 mb-4">1. Services Provided</h3>
-                <p>Press Elevate provides media coverage services...</p>
-                <!-- Add your terms content here -->
-            </div>
-        </div>
-
-        <!-- Privacy Policy -->
-        <div id="privacy" class="max-w-4xl mx-auto px-4 py-16">
-            <h2 class="text-3xl font-bold mb-8">Privacy Policy</h2>
-            <div class="prose max-w-none">
-                <h3 class="text-xl font-bold mt-8 mb-4">Information Collection</h3>
-                <p>We collect information that you provide...</p>
-                 1.	Definitions
-Wherever we talk about Personal Data below (“Personal Data”), we mean any information that can either itself identify you as an individual (“Personally Identifying Information”) or that can be connected to you indirectly by linking it to Personally Identifying Information, for example:
-(i) your account registration information on our website and in our App;
-(ii) when you request any support from us or report any problem to us;
-(iii) information provided from using certain services or features;
-(iv) information from completion of survey or questionnaire;
-(v) technical information, including the Internet protocol (IP) address used
-(vi) and your log-in information, browser, time zone setting, browser plug-in types and versions, operating system and platform;
-(vii) details of any transactions, purchases and payments you made;
-(viii) your general interaction with the website, including the full Uniform Resource Locators (URLs), clickstream to, through and from our site, products you viewed or searched for, page response times, download errors, length of visits to certain pages, page interaction information;
-(ix) information received from third parties, such as business partners, sub-contractors, payment and delivery services, referrals by other users.
-The Company also processes anonymous data, aggregated or not, to analyze and produce statistics related to the habits, usage patterns, and demographics of customers as a group or as individuals. Such anonymous data does not allow the identification of the customers to which it relates. the Company may share anonymous data, aggregated or not, with third parties. Please be aware that the Company may choose to permit third parties to offer subscription and/or registration-based services through the Company’s site. The Company shall not be responsible for any actions or policies of such third parties and you should check the applicable privacy policy of such party when providing personally identifiable information.
-            </div>
-        </div>
-
-        <!-- Refund Policy -->
-        <div id="refund" class="max-w-4xl mx-auto px-4 py-16">
-            <h2 class="text-3xl font-bold mb-8">Refund Policy</h2>
-            <div class="prose max-w-none">
-                <h3 class="text-xl font-bold mt-8 mb-4">Refund Eligibility</h3>
-                <p>Our refund policy is designed to be fair...</p>
-                <!-- Add your refund policy content here -->
-            </div>
-        </div>
-    </div>
 </body>
 </body>
 </html>
