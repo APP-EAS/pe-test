@@ -1145,8 +1145,8 @@ This privacy policy was last updated on 12 July 2023 (“Revision Date”). If y
             // Prevent default scroll
             event.preventDefault();
             
-            // Hide all major sections
-            document.querySelectorAll('body > div:not([id="modalBackdrop"]):not([id="essentialModal"]):not([id="eliteModal"]):not([id="podcastModal"]):not([id="legalPages"])').forEach(div => {
+            // Hide all major sections including footer
+            document.querySelectorAll('body > div:not([id="modalBackdrop"]):not([id="essentialModal"]):not([id="eliteModal"]):not([id="podcastModal"]):not([id="legalPages"]), footer').forEach(div => {
                 div.classList.add('hidden');
             });
             
