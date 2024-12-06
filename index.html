@@ -46,7 +46,32 @@
             filter: grayscale(0%);
             opacity: 1;
         }
-    
+
+        /* CSV Popup Styling */
+        #data-table {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        
+        #csv-table th,
+        #csv-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border: 1px solid #e5e7eb;
+        }
+        
+        #csv-table th {
+            background-color: #f3f4f6;
+            font-weight: bold;
+        }
+        
+        #csv-table td.text-gray-600 {
+            color: #6b7280; /* Tailwind gray-600 */
+            font-style: italic;
+        }
+
         /* Adjustments for Mobile View */
         @media (max-width: 768px) {
             .hero-text {
@@ -585,7 +610,7 @@
                             <li class="flex items-center">
                                 <i class="fas fa-file-alt text-blue-800 mr-3"></i>
                                 <span class="text-gray-600">View coverage details</span>
-                                <a href="https://docs.google.com/spreadsheets/d/essential-network-list" class="text-blue-800 ml-2 text-sm">(See Core Network List)</a>
+                                <a href="javascript:void(0)" onclick="fetchCSV('https://raw.githubusercontent.com/username/repository/main/files/core.csv', 'Core Network List')" class="text-blue-800 ml-2 text-sm">(See Core Network List)</a>
                             </li>
                             <li class="flex items-center">
                                 <i class="fas fa-check text-green-500 mr-3"></i>
@@ -671,7 +696,7 @@
                             <li class="flex items-center">
                                 <i class="fas fa-file-alt text-blue-800 mr-3"></i>
                                 <span class="text-gray-600">View coverage details</span>
-                                <a href="https://docs.google.com/spreadsheets/d/elite-network-list" class="text-blue-800 ml-2 text-sm">(See Elite Network List)</a>
+                                <a href="javascript:void(0)" onclick="fetchCSV('https://raw.githubusercontent.com/username/repository/main/files/elite.csv', 'Elite Network List')" class="text-blue-800 ml-2 text-sm">(See Elite Network List)</a>
                             </li>
                             <li class="flex items-center">
                                 <i class="fas fa-check text-green-500 mr-3"></i>
@@ -999,7 +1024,73 @@
                     break;
             }
         }
+
+        async function fetchCSV(fileUrl, title) {
+            try {
+                const response = await fetch(fileUrl);
+                const data = await response.text();
+    
+                // Parse CSV
+                const rows = data.split('\n').filter(row => row.trim() !== '');
+                const headers = rows.shift().split(',');
+                const tableTitle = document.getElementById('table-title');
+                const tableHead = document.querySelector('#csv-table thead tr');
+                const tableBody = document.querySelector('#csv-table tbody');
+    
+                tableTitle.textContent = title;
+                tableHead.innerHTML = ''; // Clear old headers
+                tableBody.innerHTML = ''; // Clear old rows
+    
+                // Add headers
+                headers.forEach(header => {
+                    const th = document.createElement('th');
+                    th.textContent = header.trim();
+                    th.className = 'border border-gray-300 px-4 py-2 text-left';
+                    tableHead.appendChild(th);
+                });
+    
+                // Add rows
+                rows.forEach(row => {
+                    const tr = document.createElement('tr');
+                    row.split(',').forEach((cell, index) => {
+                        const td = document.createElement('td');
+                        td.textContent = cell.trim();
+                        td.className = `border border-gray-300 px-4 py-2 ${
+                            index === 1 ? 'text-gray-600 italic' : ''
+                        }`;
+                        tr.appendChild(td);
+                    });
+                    tableBody.appendChild(tr);
+                });
+    
+                // Show popup
+                document.getElementById('data-table').classList.remove('hidden');
+            } catch (error) {
+                console.error('Error fetching CSV:', error);
+            }
+        }
+    
+        function closePopup() {
+            document.getElementById('data-table').classList.add('hidden');
+        }
     </script>
+    <!-- CSV Data Popup -->
+    <div id="data-table" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+        <div class="bg-white rounded-lg p-8 max-w-4xl w-full">
+            <button onclick="closePopup()" class="float-right text-gray-600 hover:text-gray-800">&times; Close</button>
+            <h3 id="table-title" class="text-2xl font-bold mb-4"></h3>
+            <table id="csv-table" class="table-auto w-full border-collapse border border-gray-200">
+                <thead>
+                    <tr class="bg-gray-100">
+                        <!-- Headers will be dynamically populated -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Data rows will be dynamically populated -->
+                </tbody>
+            </table>
+        </div>
+    </div>
 </body>
 </body>
 </html>
