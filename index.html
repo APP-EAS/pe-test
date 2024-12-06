@@ -1077,7 +1077,11 @@
         
         try {
             const response = await fetch(csvFile);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
             const csvText = await response.text();
+            console.log('CSV content:', csvText); // Debug line
             const parsedData = Papa.parse(csvText, { header: true });
             
             const tableBody = document.getElementById(modalId === 'csvModalCore' ? 'coreTableBody' : 'eliteTableBody');
@@ -1095,6 +1099,7 @@
             });
         } catch (error) {
             console.error('Error loading CSV data:', error);
+            alert('Error loading data. Please try again later.');
         }
     }
     
