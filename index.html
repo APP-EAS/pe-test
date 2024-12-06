@@ -65,12 +65,38 @@
                 justify-content: center;
                 align-items: center;
             }
+    
+            .gradient-hero {
+                padding-top: 6rem; /* Increased top padding for mobile devices */
+                padding-bottom: 5rem;
+            }
+        }
+    
+        /* Adjustments for Tablet View */
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .gradient-hero {
+                padding-top: 7rem; /* Increased top padding for tablet devices */
+                padding-bottom: 5rem;
+            }
+    
+            .hero-text {
+                font-size: 3rem;
+            }
+    
+            .hero-card {
+                height: auto;
+                min-height: 150px; /* Slightly taller cards for better spacing */
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
         }
     
         /* Adjustments for Desktop View */
         @media (min-width: 1024px) {
             .gradient-hero {
-                padding-top: 8rem; /* Increased top padding for better spacing */
+                padding-top: 8rem; /* Maintains ample spacing for desktop */
                 padding-bottom: 5rem;
             }
     
