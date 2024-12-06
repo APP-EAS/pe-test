@@ -257,7 +257,7 @@
         </div>
     </div>
 
-    <!-- Replace both CSV modal divs -->
+    <!-- CSV Modal Divs -->
     <div id="csvModalCore" class="fixed inset-0 overflow-y-auto hidden z-50" onclick="handleModalClick(event, 'csvModalCore')">
        <div class="fixed inset-0 bg-black bg-opacity-50"></div>
        <div class="relative min-h-screen flex items-center justify-center p-4">
@@ -270,11 +270,15 @@
                </div>
                <div class="flex-1 overflow-hidden max-h-[70vh] md:max-h-[80vh]">
                    <div class="h-full overflow-auto">
-                       <table id="coreTable" class="w-full divide-y divide-gray-200 table-auto">
+                       <table class="w-full divide-y divide-gray-200 table-auto">
+                           <colgroup>
+                               <col class="w-1/3">
+                               <col class="w-2/3">
+                           </colgroup>
                            <thead class="bg-gray-50 sticky top-0">
                                <tr>
-                                   <th class="px-4 py-2 text-center text-xs font-medium text-gray-500 uppercase tracking-wider bg-gray-50 w-1/3">Publisher</th>
-                                   <th class="px-4 py-2 text-center text-xs font-medium text-gray-500 uppercase tracking-wider bg-gray-50 w-2/3">Type</th>
+                                   <th scope="col" class="px-4 py-2 text-xs font-medium text-gray-500 uppercase tracking-wider bg-gray-50">Publisher</th>
+                                   <th scope="col" class="px-4 py-2 text-xs font-medium text-gray-500 uppercase tracking-wider bg-gray-50">Type</th>
                                </tr>
                            </thead>
                            <tbody class="bg-white divide-y divide-gray-200 text-sm" id="coreTableBody">
@@ -298,11 +302,15 @@
                </div>
                <div class="flex-1 overflow-hidden max-h-[70vh] md:max-h-[80vh]">
                    <div class="h-full overflow-auto">
-                       <table id="eliteTable" class="w-full divide-y divide-gray-200 table-auto">
+                       <table class="w-full divide-y divide-gray-200 table-auto">
+                           <colgroup>
+                               <col class="w-1/3">
+                               <col class="w-2/3">
+                           </colgroup>
                            <thead class="bg-gray-50 sticky top-0">
                                <tr>
-                                   <th class="px-4 py-2 text-center text-xs font-medium text-gray-500 uppercase tracking-wider bg-gray-50 w-1/3">Publisher</th>
-                                   <th class="px-4 py-2 text-center text-xs font-medium text-gray-500 uppercase tracking-wider bg-gray-50 w-2/3">Type</th>
+                                   <th scope="col" class="px-4 py-2 text-xs font-medium text-gray-500 uppercase tracking-wider bg-gray-50">Publisher</th>
+                                   <th scope="col" class="px-4 py-2 text-xs font-medium text-gray-500 uppercase tracking-wider bg-gray-50">Type</th>
                                </tr>
                            </thead>
                            <tbody class="bg-white divide-y divide-gray-200 text-sm" id="eliteTableBody">
@@ -1100,8 +1108,8 @@
                 if (row.Publisher && row.Type) {
                     const tr = document.createElement('tr');
                     tr.innerHTML = `
-                        <td class="px-4 py-2 break-words text-center">${row.Publisher}</td>
-                        <td class="px-4 py-2 break-words text-center">${row.Type}</td>
+                        <td class="px-4 py-2 break-words">${row.Publisher}</td>
+                        <td class="px-4 py-2 break-words">${row.Type}</td>
                     `;
                     tableBody.appendChild(tr);
                 }
