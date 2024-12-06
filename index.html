@@ -259,55 +259,57 @@
 
     <!-- CSV Data Modals -->
     <div id="csvModalCore" class="fixed inset-0 flex items-center justify-center hidden z-50">
-        <div class="bg-white rounded-lg p-8 max-w-4xl w-full mx-4 h-[90vh] flex flex-col">
-            <div class="flex justify-between items-center mb-6">
-                <h3 class="text-2xl font-bold">Core Network List</h3>
-                <button onclick="closeCsvModal('csvModalCore')" class="text-gray-600 hover:text-gray-800">
-                    <i class="fas fa-times text-xl"></i>
-                </button>
-            </div>
-            <div class="flex-1 overflow-hidden">
-                <div class="h-full overflow-auto">
-                    <table id="coreTable" class="min-w-full divide-y divide-gray-200">
-                        <thead class="bg-gray-50 sticky top-0">
-                            <tr>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Publisher</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Type</th>
-                            </tr>
-                        </thead>
-                        <tbody class="bg-white divide-y divide-gray-200" id="coreTableBody">
-                            <!-- Data will be populated here -->
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
+       <div class="fixed inset-0 bg-black bg-opacity-50" onclick="closeCsvModal('csvModalCore')"></div>
+       <div class="bg-white rounded-lg p-8 max-w-4xl w-full mx-4 h-[90vh] flex flex-col relative">
+           <div class="flex justify-between items-center mb-6">
+               <h3 class="text-2xl font-bold">Core Network List</h3>
+               <button onclick="closeCsvModal('csvModalCore')" class="text-gray-600 hover:text-gray-800">
+                   <i class="fas fa-times text-xl"></i>
+               </button>
+           </div>
+           <div class="flex-1 overflow-hidden">
+               <div class="h-full overflow-auto">
+                   <table id="coreTable" class="min-w-full divide-y divide-gray-200">
+                       <thead class="bg-gray-50 sticky top-0">
+                           <tr>
+                               <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-gray-50">Publisher</th>
+                               <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-gray-50">Type</th>
+                           </tr>
+                       </thead>
+                       <tbody class="bg-white divide-y divide-gray-200" id="coreTableBody">
+                           <!-- Data will be populated here -->
+                       </tbody>
+                   </table>
+               </div>
+           </div>
+       </div>
     </div>
     
     <div id="csvModalElite" class="fixed inset-0 flex items-center justify-center hidden z-50">
-        <div class="bg-white rounded-lg p-8 max-w-4xl w-full mx-4 h-[90vh] flex flex-col">
-            <div class="flex justify-between items-center mb-6">
-                <h3 class="text-2xl font-bold">Elite Network List</h3>
-                <button onclick="closeCsvModal('csvModalElite')" class="text-gray-600 hover:text-gray-800">
-                    <i class="fas fa-times text-xl"></i>
-                </button>
-            </div>
-            <div class="flex-1 overflow-hidden">
-                <div class="h-full overflow-auto">
-                    <table id="eliteTable" class="min-w-full divide-y divide-gray-200">
-                        <thead class="bg-gray-50 sticky top-0">
-                            <tr>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Publisher</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Type</th>
-                            </tr>
-                        </thead>
-                        <tbody class="bg-white divide-y divide-gray-200" id="eliteTableBody">
-                            <!-- Data will be populated here -->
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
+       <div class="fixed inset-0 bg-black bg-opacity-50" onclick="closeCsvModal('csvModalElite')"></div>
+       <div class="bg-white rounded-lg p-8 max-w-4xl w-full mx-4 h-[90vh] flex flex-col relative">
+           <div class="flex justify-between items-center mb-6">
+               <h3 class="text-2xl font-bold">Elite Network List</h3>
+               <button onclick="closeCsvModal('csvModalElite')" class="text-gray-600 hover:text-gray-800">
+                   <i class="fas fa-times text-xl"></i>
+               </button>
+           </div>
+           <div class="flex-1 overflow-hidden">
+               <div class="h-full overflow-auto">
+                   <table id="eliteTable" class="min-w-full divide-y divide-gray-200">
+                       <thead class="bg-gray-50 sticky top-0">
+                           <tr>
+                               <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-gray-50">Publisher</th>
+                               <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-gray-50">Type</th>
+                           </tr>
+                       </thead>
+                       <tbody class="bg-white divide-y divide-gray-200" id="eliteTableBody">
+                           <!-- Data will be populated here -->
+                       </tbody>
+                   </table>
+               </div>
+           </div>
+       </div>
     </div>
     
     <!-- Navigation -->
