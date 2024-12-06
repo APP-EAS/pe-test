@@ -47,6 +47,7 @@
             opacity: 1;
         }
     
+        /* Adjustments for Mobile View */
         @media (max-width: 768px) {
             .hero-text {
                 font-size: 2.25rem !important;
@@ -57,7 +58,8 @@
             }
     
             .hero-card {
-                height: 120px; /* Ensures consistent height for hero cards on mobile */
+                height: auto;
+                min-height: 140px; /* Ensures consistent height for all hero cards on mobile */
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -65,10 +67,20 @@
             }
         }
     
+        /* Adjustments for Desktop View */
         @media (min-width: 1024px) {
             .gradient-hero {
-                padding-top: 12rem; /* Increased top padding for desktop for better spacing */
+                padding-top: 8rem; /* Increased top padding for better spacing */
                 padding-bottom: 5rem;
+            }
+    
+            .hero-card {
+                height: auto;
+                min-height: 160px; /* Ensures consistent height for all hero cards on desktop */
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
             }
         }
     </style>
